@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="update">
+        <marquee>Login Your Credentials</marquee>
+         <hr>
+         <h1>Login</h1>
+            <div class="name sp">
+                <h2>Enter Your ID</h2>
+              <input type="text" id="id">
+            </div>
+            <div class="email sp">
+                <h2>Enter Your Password</h2>
+                <input type="password" id="pass" >
+            </div>
+            <div class="update_btn sp">
+             <button onclick="submit()">Submit</button>
+            </div>
+     </div>
+</body>
+<script>
+    let Id = document.getElementById("id")
+    let Pass = document.getElementById("pass")
+    if (localStorage.getItem("Login") == true) {
+           window.location.assign('show_details.html')
+        }
+    function submit() {
+        if (Id.value == localStorage.getItem("RollNumber")) {
+            if (Pass.value == localStorage.getItem("Password")) {
+                alert("You are Logged in")
+                localStorage.setItem("Login", true) 
+                               window.location.assign("show_details.html")
+            }
+            else{
+                alert("Your Password is Wrong")
+            }
+        }
+        else{
+            alert("Your ID is Wrong")
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,186 @@
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        width: 100vw;
+        background: blue;
+    }
+    .box{
+        width: 80%;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        border: 2px solid white;
+        background: yellow;
+        margin: 2rem 0 10% 10%;
+        height: auto;
+        align-items: left;
+    }
+    .img{
+        display: flex;
+        flex-direction: column;
+        width: 20rem;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+        gap:10px;
+        margin: auto;
+    }
+    .img img{
+        border-radius: 50%;
+        width: 10rem;
+        height: 10rem;
+    }
+    .img h1{
+        font-size: 20px;
+    }
+    .info{
+        border-radius: 20px;
+        display: flex;
+        align-items: left;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .info h2{
+        font-size: 18px;
+    }
+    .info h2 span{
+        font-size: 18px;
+    }
+    .update{
+        width: 80%;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        border: 2px solid white;
+        background: yellow;
+        margin: 2rem 0 10% 10%;
+        height: auto;
+        align-items: left;
+    }
+    .update h1{
+        font-size: 30px;
+        text-align: center;
+        
+    }
+    .sp{
+        display: flex;
+        align-items: left;
+        flex-direction: column;
+        width: auto;
+    }
+    .sp h2{
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .sp input{
+        font-size: 18px;
+        border-radius: 20px;
+        padding: 2px 0;
+        text-align: center;
+        outline: none;
+        color: black;
+    }
+    .pic input{
+        background: black;
+        border: white 1px solid;
+        color: white;
+        border-radius: 20px;
+    }
+    .update_btn {
+        margin: auto;
+    }
+    .sp button{
+        width: 10rem;
+        font-size: 30px;
+        background: black;
+        color: white;
+        border-radius: 20px;
+    }
+    #upimg{
+        color: white;
+    }
+    .show{
+        width: 80%;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        border: 2px solid white;
+        background: yellow;
+        margin: 10rem 0 10% 10%;
+        height: auto;
+    }
+    .show h1{
+        text-align: center;
+        font-size: 30px;
+        letter-spacing: 1px;
+    }
+    .details{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        height: auto;
+    }
+    .details h2{
+        text-align: left;
+        font-size: 18px;
+        color: black;
+        border-radius: 20px;
+        padding: 5px;
+    }
+    h2 input{
+        border-radius: 20px;
+        font-size: 20px;
+        padding: 0 10px;
+        width: 11rem;
+        outline: none;
+        margin-left: 1rem;
+        width: 20rem;
+    }
+    .fill_btn{
+        margin: auto;
+    }
+    .fill_btn button{
+        font-size: 25px;
+        color: white;
+        background: black;
+        width: 8rem;
+        padding: 2px 10px;
+        border-radius: 20px;
+    }
+    .imgB{
+        font-size: 25px;
+        color: white;
+        background: black;
+        
+        padding: 2px 50px;        
+        border-radius: 20px;
+    }
+    marquee{
+        font-size: 20px;
+        color: red;
+    }
+    .log{
+        font-size: 25px;
+        color: white;
+        background: blue;
+        border: white 1px solid;
+        padding: 3px 20px;
+        border-radius: 20px;
+        
+    }
+    .cTT{
+        color: black;
+        font-size: 25px;
+        margin: auto;
+        padding: 0 10px;
+        background: green;
+        border: 1px solid green;
+        border-radius: 20px;
+        filter: invert(1);
+    }

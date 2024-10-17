@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Your Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>  
+     
+     
+     <div class="show">
+         <marquee>One Time Submission</marquee>
+         <hr>
+         <h1>Fill Your Details</h1>
+         <div class="details">
+             <h2>
+              Name : <input type="text" id="info_name">
+             </h2>
+             <h2>
+     Roll Number : <input type="number" id="info_roll">
+             </h2>
+             <h2>
+      Department : <input type="text" id="info_depart">
+             </h2>
+             <h2>
+          Course : <input type="text" id="info_course">
+             </h2>
+             <h2>
+                 Email : <input type="email" id="info_email">
+             </h2>
+             <h2>
+                 Create Password: <input type="password" name="" id="info_pass">
+             </h2>
+             <div class="fill_btn">
+       <button onclick="submit()">Submit</button>
+             </div>
+         </div>
+</body>
+<script>
+    if(localStorage.getItem("Name")){
+        if(localStorage.getItem("Login")){
+        window.location.assign('show_details.html')
+        }
+        else{
+            window.location.assign('login.html')
+        }
+    }
+    else{
+   function submit(){
+        let name = document.getElementById("info_name").value;
+        let RollNo = document.getElementById("info_roll").value;
+        let depart = document.getElementById("info_depart").value;
+        let course = document.getElementById("info_course").value;
+        let email = document.getElementById("info_email").value;
+        let pass = document.getElementById("info_pass").value;
+        
+        if(!name == "" && !RollNo == "" && !depart == "" && !course == "" && !email == ""){                       
+        localStorage.setItem("Name", name)
+        localStorage.setItem("RollNumber", RollNo)
+        localStorage.setItem("Department", depart)
+        localStorage.setItem("Course", course)
+        localStorage.setItem("Email", email)
+        localStorage.setItem("Password", pass)
+        alert("Your Details are Submitted Successfully")
+        window.location.assign('login.html')
+     }
+     else{
+         alert("Fill The All Credentials")
+         
+     }
+   }
+}
+ 
+   
+</script>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Updae</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="update">
+        <marquee>Update Your Information</marquee>
+         <hr>
+            <div class="name sp">
+                <h2>Full Name</h2>
+              <input type="text" id="nupname" readonly>
+            </div>
+            <div class="email sp">
+                <h2>Email<i>*</i></h2>
+                <input type="email" id="upemail" >
+            </div>
+            <div class="sp">
+                <h2>Change Password</h2>
+                <input placeholder="Enter Your Previous Password" type="password" name="" id="prpass">
+                <input style="margin: 20px 0" placeholder="Enter Your New Password" type="password" name="" id="pass">
+                <input placeholder="Confirm Password" type="text" name="" id="cpass">
+            </div>
+            <div class="roll sp">
+                <h2>College Roll Number</h2>
+               <input type="number" id="roll" readonly>
+            </div>
+            <div class="update_btn sp">
+             <button onclick="submit()">Submit</button>
+            </div>
+        </div>
+</body>
+<script>
+    if(!localStorage.getItem("Login")){
+        window.location.assign('index.html')
+    }
+    let ShName = document.getElementById("nupname")
+    let UpEmail = document.getElementById("upemail")
+    let ShRoll = document.getElementById("roll")
+    let PrPass = document.getElementById("prpass")
+    let NwPass = document.getElementById("pass")
+    let CfPass = document.getElementById("cpass")
+    
+    ShName.value = localStorage.getItem("Name")
+    ShRoll.value = localStorage.getItem("RollNumber")
+    UpEmail.value = localStorage.getItem("Email")
+    function submit() {
+        if (UpEmail) {
+            localStorage.setItem("Email", UpEmail.value)
+        
+     }
+        else {
+            alert('Enter a Valid Email Address')
+        }
+        
+        if (PrPass.value) {
+            if (PrPass == localStorage.getItem("Password")) {
+                if (NwPass.value == CfPass.value) {
+                    localStorage.setItem("Password", NwPass.value)
+                    alert("Your Profile has been Updated Successfully")
+                    localStorage.setItem("Login", true)
+                    window.location.assign("index.html")
+                }
+                else{
+                    alert("New Pass and Confirm Pass Does not Same!")
+                }
+            }
+            else{
+                alert("Your Current Password is Worng!")
+            }
+        }
+        
+    }
+    
+</script>
+</html>

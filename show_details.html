@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="box">
+        <div class="img">
+            <img src="" id="img" alt=""></img>
+            <h1>
+                <span id="name">Default</span>
+            </h1>
+        </div>
+        <div class="info">
+            <h2>
+              Course : <span id="course">Default</span>
+            </h2>
+            <h2>
+                   Semester : <span id="sem">1</span>
+            </h2>
+            <h2>
+          Department : <span id="depart">Default</span>
+            </h2>
+            <button class="log" onclick="logout()">Logout</button>
+        </div>
+    </div>
+    <div class="update">
+            <div class="name sp">
+                <h2>Full Name</h2>
+              <input type="text" id="nupname" readonly>
+            </div>
+            <div class="email sp">
+                <h2>Email<i>*</i></h2>
+                <input type="email" id="upemail" readonly>
+            </div>
+            
+            <div class="roll sp">
+                <h2>College Roll Number</h2>
+               <input type="number" id="roll" readonly>
+            </div>
+            <div class="pic sp">
+                <input type="file" id="file">
+                
+            </div>
+            <button class="imgB" onclick="previewImage()">Change Img</button>
+            <div class="update_btn sp">
+             <button onclick="update()">Update</button>
+            </div>             
+        </div>
+   <div class="update">
+       <marquee>Create Your Time Table</marquee>
+       <button class="cTT" onclick="CreateTT()">Create Time Table</button>
+       <hr>
+       
+   </div>
+</body>
+<script>
+        let name = document.getElementById("name");
+        let NewName = document.getElementById("nupname");
+        let RollNo = document.getElementById("roll");
+        let depart = document.getElementById("depart");
+        let course = document.getElementById("course");
+        let email = document.getElementById("upemail");
+        
+       if (!localStorage.getItem("Name")){
+           window.location.assign('index.html')
+       }
+       else if (!localStorage.getItem("Login")) {
+           window.location.assign('login.html')
+        }else{
+            name.innerText = localStorage.getItem("Name")
+            NewName.value = localStorage.getItem("Name")
+            RollNo.value = localStorage.getItem("RollNumber")
+            depart.innerText = localStorage.getItem("Department")
+            course.innerText = localStorage.getItem("Course")
+            email.value = localStorage.getItem("Email")
+        }
+        
+        function update() {
+            window.location.assign("update.html")
+        }
+        function logout() {
+            localStorage.removeItem("Login")
+            window.location.assign("login.html")
+        }
+    window.onload = function() {
+        const storedImage = localStorage.getItem('image');
+        if (storedImage) {
+            const imgPreview = document.getElementById('img');
+            imgPreview.src = storedImage;
+            imgPreview.style.display = 'block';
+        }
+    }
+
+    function previewImage() {
+        const fileInput = document.getElementById('file');
+        const imgPreview = document.getElementById('img');
+        const file = fileInput.files[0];
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            const imageSrc = e.target.result;
+            imgPreview.src = imageSrc;
+            imgPreview.style.display = 'block';
+
+            // Save the image in localStorage
+            localStorage.setItem('image', imageSrc);
+        }
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    }
+    function CreateTT() {
+       window.location.assign("CreateTT.html")
+    }
+</script>
+</html>
